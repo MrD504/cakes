@@ -1,0 +1,75 @@
+{
+  "configVersion": 1,
+  "index": "/cakes/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/cakes/favicon.ico",
+        "/cakes/index.html",
+        "/cakes/main.12155a7c3384d9ec1cb7.js",
+        "/cakes/polyfills.2f4a59095805af02bd79.js",
+        "/cakes/runtime.a66f828dca56eeb90e02.js",
+        "/cakes/styles.c2bcc2319fdb796b810b.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/cakes/assets/icons/icon-128x128.png",
+        "/cakes/assets/icons/icon-144x144.png",
+        "/cakes/assets/icons/icon-152x152.png",
+        "/cakes/assets/icons/icon-192x192.png",
+        "/cakes/assets/icons/icon-384x384.png",
+        "/cakes/assets/icons/icon-512x512.png",
+        "/cakes/assets/icons/icon-72x72.png",
+        "/cakes/assets/icons/icon-96x96.png",
+        "/cakes/assets/images/logo.png",
+        "/cakes/assets/images/not-found.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/cakes/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/cakes/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/cakes/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/cakes/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/cakes/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/cakes/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/cakes/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/cakes/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/cakes/assets/images/logo.png": "8eaa9c9ad2d04463079157bb8c3f7f294321ffe9",
+    "/cakes/assets/images/not-found.png": "3b3d0ec00bcdb44564d5d289c053d6afffef199b",
+    "/cakes/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
+    "/cakes/index.html": "d8d6f864e6988744b830e11f8b7ca268ad5a87a7",
+    "/cakes/main.12155a7c3384d9ec1cb7.js": "cb2118b10d6c6b8f7c7cad567cefb5f5f954ecf2",
+    "/cakes/polyfills.2f4a59095805af02bd79.js": "8949bb1b1e302dda246f6ed9c2da703270360b1f",
+    "/cakes/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
+    "/cakes/styles.c2bcc2319fdb796b810b.css": "b5e10b6cdede308579accbdad6cd6e6efa7bb533"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}
