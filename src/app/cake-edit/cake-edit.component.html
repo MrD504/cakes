@@ -1,0 +1,29 @@
+<h2>{{cake.name ? 'Edit' : 'Add'}} Cake</h2>
+<form #cakeForm="ngForm" (ngSubmit)="save(cakeForm.value)">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input [(ngModel)]="cake.name" #name type="text" class="form-control" name="name" id="name" required placeholder="Name">
+  </div>
+  <div class="form-group">
+    <label for="comment">Comment</label>
+    <textarea [(ngModel)]="cake.comment" #comment class="form-control" name="comment" id="comment" rows="3" maxlength="250" required placeholder="Comment"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="imageUrl">Image URL</label>
+    <input [(ngModel)]="cake.imageUrl" #imageurl type="text" class="form-control" name="imageUrl" id="imageUrl" required placeholder="Image url">
+  </div>
+  <div class="form-group">
+    <label for="yumFactor">Yum factor</label>
+    <select [(ngModel)]="cake.yumFactor" class="form-control" name="yumFactor" id="yumFactor">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="float-right">
+    <button class="btn btn-primary" type="submit" [disabled]="!cakeForm.form.valid">Save</button>
+    <a class="btn btn-secondary" role="button" routerLink="/cakes">Cancel</a>
+  </div>
+</form>

@@ -1,0 +1,19 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+  <span class="text-muted">Your cakes</span>
+  <span class="badge badge-secondary badge-pill">{{ cakes.length }}</span>
+</h4>
+<div class="list-group mb-3">
+  <a *ngFor="let cake of cakes" [routerLink]="['/cakes', cake.id]" class="list-group-item d-flex justify-content-between lh-condensed">
+      <img
+        [src]="cake.imageUrl"
+        class="cake-image"
+        onerror="this.onerror=null;this.src='/assets/images/not-found.png';">
+      <div>
+        <h6 class="my-0">{{ cake.name }}</h6>
+      </div>
+  </a>
+</div>
+
+<div class="float-right">
+  <a class="btn btn-primary" routerLink="/cakes/new">Add a cake</a>
+</div>

@@ -1,0 +1,9 @@
+<div class="card">
+  <img class="card-img-top" [src]="cake.imageUrl" [alt]="cake.name"/>
+  <div class="card-body">
+    <h5 class="card-title">{{ cake.name }}</h5>
+    <p class="card-text">{{ cake.comment }}</p>
+    <p class="card-text">Yum factor {{ cake.yumFactor }}</p>
+  </div>
+</div>
+<a class="btn btn-primary float-right" routerLink="/cakes">Back to cakes list</a>
