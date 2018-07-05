@@ -22,7 +22,7 @@ RUN npm install -g @angular/cli@1.7.1
 COPY . /usr/src/app
 
 # expose ports
-EXPOSE 4000 49153
+EXPOSE 4200 49153
 
 # start app
-CMD ng serve --host 0.0.0.0 --port 4000 --poll 2000
+CMD ng serve --host 0.0.0.0 --port 4200 --poll 2000

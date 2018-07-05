@@ -1,0 +1,26 @@
+version: '3'
+
+volumes:
+  cakes-web-node-modules:
+    driver: local
+
+services:
+
+  cakes-web:
+    container_name: cakes-web
+    build: . 
+    volumes:
+      - .:/usr/src/app
+      - cakes-web-node-modules:/usr/src/app/node_modules
+    command: ng serve --port 4200 --host 0.0.0.0 --poll 2000
+    stdin_open: true
+    tty: true
+    ports:
+      - 4200:4200
+      - 49153:49153
+    environment:
+      - NODE_ENV=dev
+    deploy:
+      resources:
+        limits:
+          memory: 500M

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Cake } from '../cake';
-import { Http } from '@angular/http';
-import { Observable, throwError } from 'rxjs';
+import { Http, Headers, RequestOptions } from '@angular/http';
+import { throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { BadInput } from '../common/bad-input';
 import { AppError } from '../common/app-error';
@@ -11,9 +10,14 @@ import { NotFoundError } from '../common/not-found-error';
   providedIn: 'root'
 })
 export class CakeService {
-  private url = 'http://ec2-34-243-153-154.eu-west-1.compute.amazonaws.com:5000/api'
+  private url = 'http://ec2-34-243-153-154.eu-west-1.compute.amazonaws.com:5000/api/cakes'
+  private options;
 
-  constructor(private http: Http) { }
+  constructor(private http: Http) { 
+    let headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.options = new RequestOptions({ headers: headers });
+  }
 
   all() {
     return this.http.get(this.url)
@@ -41,7 +45,7 @@ export class CakeService {
   }
 
   create(resource) {
-    return this.http.post(this.url, JSON.stringify(resource))
+    return this.http.post(this.url, JSON.stringify(resource), this.options)
       .pipe(
         map(response => response.json()),
         catchError(this.handleError)
@@ -49,7 +53,7 @@ export class CakeService {
   }
 
   update(resource) {
-    return this.http.patch(this.url + '/' + resource.id, JSON.stringify({ isRead: true }))
+    return this.http.put(this.url + '/' + resource.id, JSON.stringify({ isRead: true }, this.options))
       .pipe(
         map(response => response.json()),
         catchError(this.handleError)
