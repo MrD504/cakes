@@ -9,7 +9,7 @@
       "urls": [
         "/cakes/favicon.ico",
         "/cakes/index.html",
-        "/cakes/main.12155a7c3384d9ec1cb7.js",
+        "/cakes/main.21fc55395d4d22885659.js",
         "/cakes/polyfills.2f4a59095805af02bd79.js",
         "/cakes/runtime.a66f828dca56eeb90e02.js",
         "/cakes/styles.c2bcc2319fdb796b810b.css"
@@ -48,8 +48,8 @@
     "/cakes/assets/images/logo.png": "8eaa9c9ad2d04463079157bb8c3f7f294321ffe9",
     "/cakes/assets/images/not-found.png": "3b3d0ec00bcdb44564d5d289c053d6afffef199b",
     "/cakes/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/cakes/index.html": "d8d6f864e6988744b830e11f8b7ca268ad5a87a7",
-    "/cakes/main.12155a7c3384d9ec1cb7.js": "cb2118b10d6c6b8f7c7cad567cefb5f5f954ecf2",
+    "/cakes/index.html": "03e49bff06fec12af7fb1341796259b9726d417a",
+    "/cakes/main.21fc55395d4d22885659.js": "9bc05aca2577c80623f523fb254d6a9c7bb8d71d",
     "/cakes/polyfills.2f4a59095805af02bd79.js": "8949bb1b1e302dda246f6ed9c2da703270360b1f",
     "/cakes/runtime.a66f828dca56eeb90e02.js": "078e320cc6fdaf355836c3b1c52b059cdd33fc7e",
     "/cakes/styles.c2bcc2319fdb796b810b.css": "b5e10b6cdede308579accbdad6cd6e6efa7bb533"
