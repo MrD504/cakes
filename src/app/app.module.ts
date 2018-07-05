@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     HttpModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('/cakes/ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [
     CakeService,
