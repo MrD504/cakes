@@ -13,6 +13,7 @@ import { CakeListComponent } from './cake-list/cake-list.component';
 import { CakeEditComponent } from './cake-edit/cake-edit.component';
 import { CakeShowComponent } from './cake-show/cake-show.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/cakes', pathMatch: 'full' },
@@ -33,7 +34,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    HttpModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     ServiceWorkerModule.register('/cakes/ngsw-worker.js', { enabled: environment.production }),

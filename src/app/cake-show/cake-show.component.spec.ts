@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CakeShowComponent } from './cake-show.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('CakeShowComponent', () => {
   let component: CakeShowComponent;
@@ -8,7 +10,12 @@ describe('CakeShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ CakeShowComponent ]
+      declarations: [ CakeShowComponent ],
+      imports: [
+        HttpClientTestingModule,
+        FormsModule,
+        RouterTestingModule
+      ],
     })
     .compileComponents();
   }));

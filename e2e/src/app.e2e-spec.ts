@@ -1,4 +1,5 @@
 import { AppPage } from './app.po';
+import { fakeAsync } from '@angular/core/testing';
 
 describe('workspace-project App', () => {
   let page: AppPage;
@@ -9,6 +10,6 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Your cakes');
+    expect(page.getPageHeading()).toEqual('Your cakes');
   });
 });

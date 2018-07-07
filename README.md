@@ -1,21 +1,38 @@
 # Waracle Cakes
+PWA for managing Waracle's cakes.
 
 ## Development server
 
-Run `docker-compose up --build` for a dev server. Navigate to `http://localhost:4200/`
+### Using Docker (Compose)
+```
+docker-compose up --build
+```
+Navigate to `http://localhost:4200/`
+
+### Directly
+```
+npm install
+npm install -g @angular/cli@1.7.1
+ng serve
+```
+Navigate to `http://localhost:4200/`
 
 ## Running unit tests
+Ran only outside of Docker (so must install dependencies)
 
-Run `docker-compose run cakes-web ng test`
-
-## Running end-to-end tests
-
-Run `docker-compose run cakes-web ng e2e`
-
-## To build and deploy to Git Pages
-The deployed application cannot be used as the server endpoint is unsecure, it is deployed however so that it can be analysed by
-Lighthouse in Google Chrome dev tools, to confirm it is a PWA.
+### Unit tests
 ```
-ng build --prod  --base-href="/cakes/"
-ngh --dir dist/cakes-web
+ng test
 ```
+
+### E2E tests
+```
+ng e2e
+```
+
+## PWA score
+This app is deployed to Githup pages, so that you can test it in Chrome lighthouse to get its
+*score as a PWA*.
+
+It wont run and looses a few points as the server endpoint isn't over _https_
+It can be found [here](https://paulcockrell.github.io/cakes/cakes)

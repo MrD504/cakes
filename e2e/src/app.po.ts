@@ -5,7 +5,7 @@ export class AppPage {
     return browser.get('/');
   }
 
-  getParagraphText() {
+  getPageHeading() {
     return element(by.css('span.text-muted')).getText();
   }
 }

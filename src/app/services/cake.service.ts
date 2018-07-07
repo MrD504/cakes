@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, Headers, RequestOptions } from '@angular/http';
-import { throwError } from 'rxjs';
+import { throwError, Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 import { BadInput } from '../common/bad-input';
 import { AppError } from '../common/app-error';
 import { NotFoundError } from '../common/not-found-error';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Cake } from '../cake';
 
 @Injectable({
   providedIn: 'root'
@@ -13,16 +14,15 @@ export class CakeService {
   private url = 'http://ec2-34-243-153-154.eu-west-1.compute.amazonaws.com:5000/api/cakes'
   private options;
 
-  constructor(private http: Http) { 
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    this.options = new RequestOptions({ headers: headers });
+  constructor(private http: HttpClient) { 
+    this.options = {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
   }
 
-  all() {
-    return this.http.get(this.url)
+  all(): Observable<Cake[]> {
+    return this.http.get<[Cake]>(this.url)
       .pipe(
-        map(response => response),
         catchError(this.handleError)
       );
   }
@@ -30,7 +30,7 @@ export class CakeService {
   get(id) { 
     return this.http.get(this.url + '/' + id)
       .pipe(
-        map(response => response.json()),
+        map(response => response),
         catchError(this.handleError)
       );
   }
@@ -47,7 +47,7 @@ export class CakeService {
   create(resource) {
     return this.http.post(this.url, JSON.stringify(resource), this.options)
       .pipe(
-        map(response => response.json()),
+        map(response => response),
         catchError(this.handleError)
       );
   }
@@ -55,7 +55,7 @@ export class CakeService {
   update(resource) {
     return this.http.put(this.url + '/' + resource.id, JSON.stringify({ isRead: true }, this.options))
       .pipe(
-        map(response => response.json()),
+        map(response => response),
         catchError(this.handleError)
       );
   }
@@ -63,7 +63,7 @@ export class CakeService {
   delete(id) {
     return this.http.delete(this.url + '/' + id)
       .pipe(
-        map(response => response.json()),
+        map(response => response),
         catchError(this.handleError)
       )
   }
