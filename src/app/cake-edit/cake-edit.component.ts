@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CakeService } from '../services/cake.service';
 import { NgForm } from '@angular/forms';
@@ -9,18 +8,15 @@ import { NgForm } from '@angular/forms';
   templateUrl: './cake-edit.component.html',
   styleUrls: ['./cake-edit.component.css']
 })
-export class CakeEditComponent implements OnInit, OnDestroy {
+export class CakeEditComponent implements OnInit {
   cake: any = {};
-
-  sub: Subscription;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private service: CakeService) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      const id = params['id'];
+      const id = this.route.snapshot.paramMap.get('id');
       if (id) {
         this.service.get(id).subscribe((cake: any) => {
           if (cake) {
@@ -30,11 +26,6 @@ export class CakeEditComponent implements OnInit, OnDestroy {
           }
         });
       }
-    });
-  }
-
-  ngOnDestroy() {
-    this.sub.unsubscribe();
   }
 
   gotoList() {

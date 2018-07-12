@@ -11,16 +11,14 @@ import { Subscription } from 'rxjs';
 })
 export class CakeShowComponent implements OnInit {
   cake: any = {};
-  sub: Subscription;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
               private service: CakeService) { }
 
   ngOnInit() {
-    this.sub = this.route.params.subscribe(params => {
-      const id = params['id'];
-      if (id) {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
         this.service.get(id).subscribe((cake: any) => {
           if (cake) {
             this.cake = new Cake(cake);
@@ -29,12 +27,9 @@ export class CakeShowComponent implements OnInit {
           }
         });
       }
-    });
   }
 
-  ngOnDestroy() {
-    this.sub.unsubscribe();
-  }
+
 
   gotoList() {
     this.router.navigate(['/cakes']);
